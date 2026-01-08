@@ -19,7 +19,7 @@ class imageCNN(nn.Module):
         out_ch = base_filters
         for i in range(num_blocks):
             self.blocks.append(conv_block
-            (input_channels,output_channels,kernal_size,
+            (in_ch,out_ch,kernal_size,
             use_bn=True,activation=activation,
             pool_kernal=2,dropout=0.2))
 
