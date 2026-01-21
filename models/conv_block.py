@@ -1,5 +1,5 @@
 import torch
-import torch.nn
+import torch.nn as nn
 import torch.nn.functional as F
 
 class ConvBlock(nn.Module):
@@ -19,7 +19,7 @@ class ConvBlock(nn.Module):
     def forward(self,x):
         x = self.conv(x)
         if self.use_bn: 
-            x = self.bn(cnn_out)
+            x = self.bn(x)
         if self.activation_name == "relu":
             x = F.relu(x)
         elif self.activation_name == "gelu":

@@ -32,10 +32,10 @@ class imageCNN(nn.Module):
         self.flatten = nn.Flatten()
         self.fc = nn.Linear(out_ch, num_classes)
     def forward(self, x):
-    for block in self.blocks:
-        x = block(x)
+        for block in self.blocks:
+            x = block(x)
 
-    x = self.flatten(x)
+        x = self.flatten(x)
 
     # global average pooling alternative (safer)
     # x = x.mean(dim=(2, 3))
